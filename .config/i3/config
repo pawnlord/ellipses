@@ -15,6 +15,8 @@ exec --no-startup-id compton
 
 exec --no-startup-id feh --bg-scale ~/Downloads/neet.jpg
 
+exec --no-startup-id polybar --config="~/.config/polybar" example
+
 gaps inner 10
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -36,7 +38,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec tilda
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -47,6 +49,9 @@ bindsym $mod+d exec dmenu_run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# screenshots
+bindsym Print exec scrot -e './.cleanshot.sh $f'
 
 # change focus
 bindsym $mod+j focus left
